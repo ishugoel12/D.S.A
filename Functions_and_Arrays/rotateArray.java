@@ -22,11 +22,11 @@ public class rotateArray {
     }
 
     public static void swap(int s, int e, int[] arr) {
-        for (int i = s; i < e; i++) {
-            int temp = arr[i];
-            arr[i] = arr[e];
-            arr[e] = temp;
-            e--;
+        int c = (e - s + 1) / 2;
+        for (int i = 0; i < c; i++) {
+            int t = arr[s];
+            arr[s++] = arr[e - i];
+            arr[e - i] = t;
         }
     }
 }
