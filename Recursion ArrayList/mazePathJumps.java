@@ -6,51 +6,51 @@ import java.util.*;
 
 public class mazePathJumps {
 
-    public static void main(String[] args) throws Exception {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int m = scn.nextInt();
-        scn.close();
-        ArrayList<String> al = getMazePaths(0, 0, n - 1, m - 1);
-        System.out.print(al);
-    }
-
-    public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
-        if (sr == dr && sc == dc) {
-            ArrayList<String> ma = new ArrayList<>();
-            ma.add("");
-            return ma;
-        }
-        if (sr > dr || sc > dc) {
-            ArrayList<String> ma = new ArrayList<>();
-            return ma;
+        public static void main(String[] args) throws Exception {
+                Scanner scn = new Scanner(System.in);
+                int n = scn.nextInt();
+                int m = scn.nextInt();
+                scn.close();
+                ArrayList<String> al = getMazePaths(0, 0, n - 1, m - 1);
+                System.out.print(al);
         }
 
-        int horizontals = dc - sc;
-        int verticals = dr - sr;
-        ArrayList<String> ma = new ArrayList<>();
+        public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
+                if (sr == dr && sc == dc) {
+                        ArrayList<String> ma = new ArrayList<>();
+                        ma.add("");
+                        return ma;
+                }
+                if (sr > dr || sc > dc) {
+                        ArrayList<String> ma = new ArrayList<>();
+                        return ma;
+                }
 
-        // HORIZONTALS
-        for (int i = 1; i <= horizontals; i++) {
-            ArrayList<String> al1 = getMazePaths(sr, sc + i, dr, dc);
-            for (int j = 0; j < al1.size(); j++)
-                ma.add("h" + i + al1.get(j));
-        }
+                int horizontals = dc - sc;
+                int verticals = dr - sr;
+                ArrayList<String> ma = new ArrayList<>();
 
-        // VERTICALS
-        for (int i = 1; i <= verticals; i++) {
-            ArrayList<String> al2 = getMazePaths(sr + i, sc, dr, dc);
-            for (int j = 0; j < al2.size(); j++)
-                ma.add("v" + i + al2.get(j));
-        }
+                // HORIZONTALS
+                for (int i = 1; i <= horizontals; i++) {
+                        ArrayList<String> al1 = getMazePaths(sr, sc + i, dr, dc);
+                        for (int j = 0; j < al1.size(); j++)
+                                ma.add("h" + i + al1.get(j));
+                }
 
-        // DIAGONALS
-        int diagonals = Math.min(dr - sr, dc - sc);
-        for (int i = 1; i <= diagonals; i++) {
-            ArrayList<String> al3 = getMazePaths(sr + i, sc + i, dr, dc);
-            for (int j = 0; j < al3.size(); j++)
-                ma.add("d" + i + al3.get(j));
+                // VERTICALS
+                for (int i = 1; i <= verticals; i++) {
+                        ArrayList<String> al2 = getMazePaths(sr + i, sc, dr, dc);
+                        for (int j = 0; j < al2.size(); j++)
+                                ma.add("v" + i + al2.get(j));
+                }
+
+                // DIAGONALS
+                int diagonals = Math.min(dr - sr, dc - sc);
+                for (int i = 1; i <= diagonals; i++) {
+                        ArrayList<String> al3 = getMazePaths(sr + i, sc + i, dr, dc);
+                        for (int j = 0; j < al3.size(); j++)
+                                ma.add("d" + i + al3.get(j));
+                }
+                return ma;
         }
-        return ma;
-    }
 }
