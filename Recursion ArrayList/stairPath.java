@@ -1,3 +1,6 @@
+// You are allowed to climb 1 step, 2 steps or 3 steps in one move.
+// 3 ==> [111, 12, 21, 3]
+
 import java.util.*;
 
 public class stairPath {

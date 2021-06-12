@@ -9,14 +9,14 @@ public class decimalToAnyBase {
    }
   
     public static int getValueInBase(int n, int b){
-        int num=0, mul = 1;
+        int ans_num=0, multiplier = 1;
         while(n>0)
         {
-            int r = n % b;
+            int remaninder = n % b;
             n=n/b;
-            num = num + r*mul;
-            mul *= 10;
+            ans_num = ans_num + remaninder*multiplier;
+            multiplier *= 10;
         }
-        return num;
+        return ans_num;
     }
   }

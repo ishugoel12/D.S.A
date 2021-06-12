@@ -1,3 +1,5 @@
+// 3 3 ==>  [hhvv, hvhv, hvvh, vhhv, vhvh, vvhh]
+
 import java.util.*;
 
 public class mazePath {

@@ -1,3 +1,5 @@
+// abc ==>  [, c, b, bc, a, ac, ab, abc]
+
 import java.util.*;
 
 public class subsequences {

@@ -1,3 +1,6 @@
+// 7 -> tu, 8 -> vwx
+// 78 ==> [tv, tw, tx, uv, uw, ux]
+
 import java.util.*;
 
 public class keypadCharacters {
