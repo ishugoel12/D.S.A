@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class stairpath {
+public class stairpathUp {
         public static void main(String[] args) throws Exception {
                 Scanner scn = new Scanner(System.in);
                 int n = scn.nextInt();
